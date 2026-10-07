@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Light is the default; .dark (set by next-themes) overrides.
+   Chart colours follow a CVD-validated categorical order (blue, orange, aqua,
+   yellow, magenta, green, violet, red) with separate steps for dark mode.
+   ------------------------------------------------------------------------- */
+:root {
+  --background: #f7f7f5;
+  --surface: #ffffff;
+  --surface-2: #f1f1ee;
+  --surface-3: #e8e8e4;
+  --foreground: #121212;
+  --muted: #5d5c57;
+  --subtle: #8b8a84;
+  --border: #e3e2dd;
+  --border-strong: #cfcec8;
+  --brand: #4f46e5;
+  --brand-hover: #4338ca;
+  --brand-soft: #eef0ff;
+  --brand-fg: #ffffff;
+  --success: #15803d;
+  --success-soft: #e9f7ee;
+  --danger: #c2322f;
+  --danger-soft: #fdeceb;
+  --warning: #a16207;
+  --warning-soft: #fdf5e1;
+  --ring: #6366f1;
+
+  --chart-surface: #ffffff;
+  --chart-grid: #ecebe7;
+  --chart-axis: #8b8a84;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+  --series-7: #4a3aa7;
+  --series-8: #e34948;
+
+  --code-keyword: #7c3aed;
+  --code-string: #0f7b53;
+  --code-number: #b45309;
+  --code-comment: #8b8a84;
+  --code-function: #2563eb;
+  --code-operator: #5d5c57;
+}
+
+.dark {
+  --background: #0e0e10;
+  --surface: #161618;
+  --surface-2: #1d1d20;
+  --surface-3: #26262a;
+  --foreground: #f2f2f0;
+  --muted: #a9a8a2;
+  --subtle: #76756f;
+  --border: #29292d;
+  --border-strong: #3a3a3f;
+  --brand: #7c7cf6;
+  --brand-hover: #9393fa;
+  --brand-soft: #1f1f3a;
+  --brand-fg: #0e0e10;
+  --success: #4ade80;
+  --success-soft: #11291b;
+  --danger: #f87171;
+  --danger-soft: #2f1414;
+  --warning: #fbbf24;
+  --warning-soft: #2b2210;
+  --ring: #818cf8;
+
+  --chart-surface: #161618;
+  --chart-grid: #2a2a2e;
+  --chart-axis: #8f8e88;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  --series-6: #008300;
+  --series-7: #9085e9;
+  --series-8: #e66767;
+
+  --code-keyword: #c4b5fd;
+  --code-string: #6ee7b7;
+  --code-number: #fcd34d;
+  --code-comment: #76756f;
+  --code-function: #93c5fd;
+  --code-operator: #a9a8a2;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-fg: var(--brand-fg);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --animate-fade-in: fade-in 0.25s ease-out both;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: -400px 0;
+    }
+    to {
+      background-position: 400px 0;
+    }
+  }
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--brand) 25%, transparent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 0px, var(--surface-3) 120px, var(--surface-2) 240px);
+  background-size: 800px 100%;
+  animation: var(--animate-shimmer);
+  border-radius: 6px;
+}
+
+/* Markdown rendered from Claude's answers */
+.markdown {
+  line-height: 1.65;
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+.markdown > * + * {
+  margin-top: 0.75em;
+}
+.markdown strong {
+  font-weight: 600;
+}
+.markdown ul,
+.markdown ol {
+  padding-left: 1.25rem;
+}
+.markdown ul {
+  list-style: disc;
+}
+.markdown ol {
+  list-style: decimal;
+}
+.markdown li + li {
+  margin-top: 0.25em;
+}
+.markdown li::marker {
+  color: var(--subtle);
+}
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.1em;
+}
+.markdown h1 {
+  font-size: 1.15rem;
+}
+.markdown h2 {
+  font-size: 1.05rem;
+}
+.markdown h3 {
+  font-size: 0.975rem;
+}
+.markdown code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.1em 0.35em;
+}
+.markdown pre {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+}
+.markdown pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.markdown em {
+  color: var(--muted);
+}
+.markdown a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.markdown table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+.markdown th,
+.markdown td {
+  padding: 0.45rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.markdown th {
+  background: var(--surface-2);
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.markdown tr:last-child td {
+  border-bottom: none;
+}
+.markdown blockquote {
+  border-left: 3px solid var(--border-strong);
+  padding-left: 0.85rem;
+  color: var(--muted);
+}
+
+/* CodeMirror */
+.cm-editor {
+  font-size: 13px;
+  background: transparent !important;
+}
+.cm-editor.cm-focused {
+  outline: none !important;
+}
+.cm-scroller {
+  font-family: var(--font-mono) !important;
+  line-height: 1.6 !important;
+}
+.cm-gutters {
+  background: transparent !important;
+  border-right: 1px solid var(--border) !important;
+  color: var(--subtle) !important;
+}
+.cm-activeLineGutter,
+.cm-activeLine {
+  background: color-mix(in oklab, var(--brand) 6%, transparent) !important;
+}
+.cm-readonly .cm-activeLine,
+.cm-readonly .cm-activeLineGutter {
+  background: transparent !important;
+}
+.cm-cursor {
+  border-left-color: var(--foreground) !important;
+}
+.cm-selectionBackground,
+.cm-focused .cm-selectionBackground,
+.cm-content ::selection {
+  background: color-mix(in oklab, var(--brand) 22%, transparent) !important;
+}
+.cm-tooltip {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+}
+.cm-tooltip-autocomplete > ul > li {
+  padding: 3px 8px !important;
+  font-family: var(--font-mono);
+}
+.cm-tooltip-autocomplete > ul > li[aria-selected] {
+  background: var(--brand-soft) !important;
+  color: var(--foreground) !important;
+}
+.cm-completionDetail {
+  color: var(--subtle);
+  font-style: normal !important;
+  margin-left: 0.75em;
+}
+
+.recharts-wrapper svg:focus,
+.recharts-surface:focus {
+  outline: none;
+}
