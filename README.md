@@ -2,6 +2,8 @@
 
 **An AI data analyst that answers questions about your data with live SQL and charts.**
 
+**[Live demo](https://querymind-lalit.vercel.app)** · [Source](https://github.com/rajak312/querymind)
+
 Ask a question in plain English. Claude plans the analysis and writes PostgreSQL. Your browser runs each query on a real Postgres database compiled to WebAssembly ([PGlite](https://pglite.dev)). Then you get the answer, the chart and every query behind it, ready to inspect, rerun or export.
 
 ![Workspace answering a question with a SQL step, result table and chart](docs/screenshots/workspace-answer.png)
