@@ -91,7 +91,7 @@ function Shell() {
           </Button>
           <ThemeToggle />
           <a
-            href="https://github.com/rajak312/querymind"
+            href="https://github.com/lalitkumarrajak/querymind"
             target="_blank"
             rel="noreferrer"
             aria-label="Source on GitHub"

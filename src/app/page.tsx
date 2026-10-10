@@ -16,7 +16,7 @@ import { GithubIcon } from "@/components/ui/github-icon";
 import { Logo } from "@/components/ui/logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
-const REPO_URL = "https://github.com/rajak312/querymind";
+const REPO_URL = "https://github.com/lalitkumarrajak/querymind";
 
 const FEATURES = [
   {
@@ -229,7 +229,7 @@ export default function LandingPage() {
           <p>
             Built by{" "}
             <a
-              href="https://github.com/rajak312"
+              href="https://github.com/lalitkumarrajak"
               target="_blank"
               rel="noreferrer"
               className="font-medium text-foreground hover:underline"

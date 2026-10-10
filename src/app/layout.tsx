@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   description:
     "Ask questions about your data in plain English. QueryMind uses Claude to write SQL, runs it on a Postgres database inside your browser (PGlite) and answers with tables and charts.",
-  authors: [{ name: "Lalit Kumar Rajak", url: "https://github.com/rajak312" }],
+  authors: [{ name: "Lalit Kumar Rajak", url: "https://github.com/lalitkumarrajak" }],
   keywords: ["AI data analyst", "text to SQL", "Claude", "PGlite", "Next.js", "data visualization"],
   openGraph: {
     title: "QueryMind · AI data analyst",

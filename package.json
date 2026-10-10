@@ -59,11 +59,11 @@
     "vitest": "^5.0.3"
   },
   "description": "AI data analyst: ask questions in plain English, Claude writes SQL that runs on Postgres (PGlite) in your browser, and answers with tables and charts.",
-  "author": "Lalit Kumar Rajak (https://github.com/rajak312)",
+  "author": "Lalit Kumar Rajak (https://github.com/lalitkumarrajak)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rajak312/querymind.git"
+    "url": "https://github.com/lalitkumarrajak/querymind.git"
   },
   "engines": {
     "node": ">=20.9"

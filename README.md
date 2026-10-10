@@ -2,7 +2,7 @@
 
 **An AI data analyst that answers questions about your data with live SQL and charts.**
 
-**[Live demo](https://querymind-lalit.vercel.app)** · [Source](https://github.com/rajak312/querymind)
+**[Live demo](https://querymind-lalit.vercel.app)** · [Source](https://github.com/lalitkumarrajak/querymind)
 
 Ask a question in plain English. Claude plans the analysis and writes PostgreSQL. Your browser runs each query on a real Postgres database compiled to WebAssembly ([PGlite](https://pglite.dev)). Then you get the answer, the chart and every query behind it, ready to inspect, rerun or export.
 
@@ -116,7 +116,7 @@ The default is **`claude-opus-5-5`** (Claude Opus 5.5), Anthropic's current Opus
 Requirements: Node.js 20.9+ (developed on Node 24) and npm.
 
 ```bash
-git clone https://github.com/rajak312/querymind.git
+git clone https://github.com/lalitkumarrajak/querymind.git
 cd querymind
 npm install
 cp .env.example .env.local   # then set ANTHROPIC_API_KEY
@@ -225,7 +225,7 @@ tests/                      Vitest + MSW
 
 ## Author
 
-Built by **Lalit Kumar Rajak** ([@rajak312](https://github.com/rajak312)), a full-stack developer building agentic AI workflows.
+Built by **Lalit Kumar Rajak** ([@lalitkumarrajak](https://github.com/lalitkumarrajak)), a full-stack developer building agentic AI workflows.
 
 ## License
 
